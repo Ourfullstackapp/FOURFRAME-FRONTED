@@ -10,16 +10,16 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const apiUrl = process.env.REACT_APP_API_URL;
 
-  // ✅ UseEffect now includes apiUrl in dependencies to fix the ESLint warning
+  
   useEffect(() => {
-    fetch(`${apiUrl}/api/movies`) // replace with your actual Flask endpoint
+    fetch(`${apiUrl}/api/movies`) 
       .then(res => res.json())
       .then(data => {
         console.log("🎬 Flask API data:", data);
-        // setMovies(data); // uncomment if you want to show backend movies
+        
       })
       .catch(err => console.error("❌ Error fetching from Flask backend:", err));
-  }, [apiUrl]); // ✅ include apiUrl in dependency array
+  }, [apiUrl]); 
 
   const fetchTrending = async () => {
     try {
