@@ -1,71 +1,142 @@
-# Getting Started with Create React App
+# FOURFRAME Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FOURFRAME is a sleek, responsive single-page application built with **React** , featuring **JWT authentication**, user profiles (with profile picture upload), and dynamic interaction with a Flask-based RESTful API.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+[Frontend Live on Vercel]
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This is the **frontend** of the FOURFRAME full-stack application, developed as part of a final project to demonstrate:
 
-### `npm test`
+- JWT-based authentication
+- SPA with React Router
+- Responsive design using Tailwind CSS
+- Integration with a Flask REST API
+- Secure profile management (update name, email, and profile picture)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ User Registration & Login  
+ JWT Authentication (stored in localStorage)  
+ Protected Routes  
+ Profile Page with Update Support  
+ Profile Picture Upload (image preview included)  
+ Error & Loading State Handling  
+ Responsive Design using Tailwind  
+ Clean, component-based architecture  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##  Screenshots
 
-### `npm run eject`
+> Profile Update Page with Image Upload:
+![Profile Page](./public/screenshot-profile.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##  Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Node.js (v16+ recommended)
+- npm or yarn
 
-## Learn More
+###  Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/yourusername/fourframe-frontend.git
+cd fourframe-frontend
+npm install
+⚙️Environment Variables
+Create a .env file in the root directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+env
+Copy
+Edit
+VITE_API_URL=http://localhost:5000/api
+Replace with your deployed API URL when in production.
 
-### Code Splitting
+Running the App Locally
+bash
+Copy
+Edit
+npm run dev
+The app will be available at http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🛠️ Tech Stack
+React – Frontend framework
 
-### Analyzing the Bundle Size
+React Router – SPA routing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Axios – HTTP requests
 
-### Making a Progressive Web App
+Tailwind CSS – Styling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+JWT – Auth token management
 
-### Advanced Configuration
+Vite – Fast dev server & build tool
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+On login, JWT is received and stored in localStorage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Protected routes require valid token
 
-### `npm run build` fails to minify
+Token is attached as Authorization: Bearer <token> in all API calls
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# FOURFRAME-FRONTED
+Invalid or expired tokens are handled with automatic logout
+
+Testing
+bash
+Copy
+Edit
+npm run test
+Includes one front-end test using React Testing Library for login flow validation.
+
+API Integration
+All API calls are made to the Flask backend. Example:
+
+js
+Copy
+Edit
+axios.get('/profile', {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+})
+See Backend API Documentation for full endpoint reference.
+
+Deployment
+Frontend is deployed to Vercel
+
+Backend is deployed to Render
+
+Environment variables are managed securely
+
+Documentation
+React Docs
+Tailwind CSS Docs
+JWT Docs
+Axios Docs
+
+Contributors:
+Owen Kariuki
+Tyra Mwai
+
+License
+This project is licensed under the MIT License.
+
+
+
+
+
+
+
+
+
+
