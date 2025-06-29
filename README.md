@@ -1,142 +1,107 @@
-# FOURFRAME Frontend
+FOURFRAME Frontend
+FOURFRAME is a sleek, responsive single-page application built with React, featuring JWT authentication, user profiles (with profile picture upload), and dynamic interactions through secure frontend logic.
 
-FOURFRAME is a sleek, responsive single-page application built with **React** , featuring **JWT authentication**, user profiles (with profile picture upload), and dynamic interaction with a Flask-based RESTful API.
+ Live Demo
+Frontend Live on Vercel:https://fourframe-fronted.vercel.app/
 
-## Live Demo
+ Project Overview
+This is the frontend of the FOURFRAME full-stack application, developed to demonstrate:
 
-[Frontend Live on Vercel]
+JWT-based authentication
 
----
+SPA routing with React Router
 
-## Project Overview
+Responsive design using Tailwind CSS
 
-This is the **frontend** of the FOURFRAME full-stack application, developed as part of a final project to demonstrate:
+Secure profile management (update name, email, and profile picture)
 
-- JWT-based authentication
-- SPA with React Router
-- Responsive design using Tailwind CSS
-- Integration with a Flask REST API
-- Secure profile management (update name, email, and profile picture)
+Clean and modular React architecture
 
----
+ Features
+ User Registration & Login
+ JWT Authentication (stored in localStorage)
+ Protected Routes
+ Profile Page with Update Support
+ Profile Picture Upload with Image Preview
+ Error & Loading State Handling
+ Responsive Design with Tailwind CSS
+ Clean Component-Based Structure
 
-## Features
+ Screenshots
+Profile Update Page with Image Upload
 
- User Registration & Login  
- JWT Authentication (stored in localStorage)  
- Protected Routes  
- Profile Page with Update Support  
- Profile Picture Upload (image preview included)  
- Error & Loading State Handling  
- Responsive Design using Tailwind  
- Clean, component-based architecture  
 
----
+ Getting Started
+ Prerequisites
+Node.js (v16+ recommended)
 
-##  Screenshots
+npm or yarn
 
-> Profile Update Page with Image Upload:
-![Profile Page](./public/screenshot-profile.png)
-
----
-
-##  Getting Started
-
-### Prerequisites
-
-- Node.js (v16+ recommended)
-- npm or yarn
-
-###  Installation
-
-```bash
-git clone https://github.com/yourusername/fourframe-frontend.git
-cd fourframe-frontend
-npm install
-⚙️Environment Variables
-Create a .env file in the root directory:
-
-env
+ Installation
+bash
 Copy
 Edit
-VITE_API_URL=http://localhost:5000/api
-Replace with your deployed API URL when in production.
+git clone git@github.com:Ourfullstackapp/FOURFRAME-FRONTED.git
+cd FOURFRAME-frontend
+npm install
+⚙️ Environment Variables
+Create a .env file in the root directory and configure necessary variables (e.g., API base URL):
 
+bash
+Copy
+Edit
+VITE_API_BASE_URL=http://localhost:5000/api
 Running the App Locally
 bash
 Copy
 Edit
 npm run dev
-The app will be available at http://localhost:3000
+App will be live at:
+http://localhost:3000
 
-🛠️ Tech Stack
-React – Frontend framework
+Tech Stack
+React – Frontend Framework
 
-React Router – SPA routing
+React Router – SPA Routing
 
-Axios – HTTP requests
+Axios – HTTP Client
 
-Tailwind CSS – Styling
+Style CSS – Styling
 
-JWT – Auth token management
+JWT – Auth Token Management
 
-Vite – Fast dev server & build tool
+Vite – Development & Build Tool
 
+Auth Flow (Frontend)
+JWT stored in localStorage on login
 
-On login, JWT is received and stored in localStorage
+Protected routes require a valid token
 
-Protected routes require valid token
+Token is sent in requests as Authorization: Bearer <token>
 
-Token is attached as Authorization: Bearer <token> in all API calls
-
-Invalid or expired tokens are handled with automatic logout
+Invalid/expired tokens trigger logout
 
 Testing
 bash
 Copy
 Edit
 npm run test
-Includes one front-end test using React Testing Library for login flow validation.
-
-API Integration
-All API calls are made to the Flask backend. Example:
-
-js
-Copy
-Edit
-axios.get('/profile', {
-  headers: {
-    Authorization: `Bearer ${token}`
-  }
-})
-See Backend API Documentation for full endpoint reference.
-
-Deployment
-Frontend is deployed to Vercel
-
-Backend is deployed to Render
-
-Environment variables are managed securely
+Includes one frontend test using React Testing Library for validating login flow.
 
 Documentation
 React Docs
-Tailwind CSS Docs
+
+Style CSS Docs
+
 JWT Docs
+
 Axios Docs
 
-Contributors:
+Contributors
 Owen Kariuki
+
 Tyra Mwai
 
 License
 This project is licensed under the MIT License.
-
-
-
-
-
-
-
-
-
 
