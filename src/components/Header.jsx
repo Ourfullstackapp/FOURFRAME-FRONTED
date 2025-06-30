@@ -10,7 +10,7 @@ const Header = ({
   onTrendingClick
 }) => (
   <header className="header-container">
-    <h1 className="header-title">🎬 EUTOPIA 🎥🔥</h1>
+    <h1 className="header-title">🎬 FOURFRAME 🎥🔥</h1>
 
     <SearchBar
       searchTerm={searchQuery}

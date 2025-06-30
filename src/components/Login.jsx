@@ -7,7 +7,6 @@ const Login = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false); 
 
-  // Use your Render backend from .env
   const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {

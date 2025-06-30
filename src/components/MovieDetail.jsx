@@ -12,7 +12,7 @@ const MovieDetail = () => {
   const [trailerKey, setTrailerKey] = useState("");
   const [error, setError] = useState("");
 
-  const type = location.state?.media_type || 'movie'; // fallback to 'movie'
+  const type = location.state?.media_type || 'movie'; 
 
   useEffect(() => {
     const fetchDetails = async () => {
