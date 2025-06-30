@@ -12,6 +12,7 @@ const Register = () => {
   });
 
   const [showPassword, setShowPassword] = useState(false);
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -31,7 +32,11 @@ const Register = () => {
     };
 
     try {
-      await axios.post('http://localhost:5000/api/register', payload);
+      await axios.post(`${apiUrl}/register`, payload, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       alert('Registration successful!');
       window.location.href = '/login';
     } catch (err) {

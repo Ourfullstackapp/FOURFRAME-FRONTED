@@ -7,6 +7,9 @@ const Login = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false); 
 
+  // Use your Render backend from .env
+  const apiUrl = process.env.REACT_APP_API_URL;
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
     setError(null); 
@@ -15,11 +18,17 @@ const Login = () => {
   const handleLogin = async () => {
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/login', form);
+      const res = await axios.post(`${apiUrl}/login`, form, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
       localStorage.setItem('token', res.data.access_token);
       localStorage.setItem('username', res.data.username || form.identifier);
       window.location.href = '/'; 
     } catch (err) {
+      console.error('❌ Login error:', err);
       setError('Login failed. Check your credentials.');
     } finally {
       setLoading(false);
